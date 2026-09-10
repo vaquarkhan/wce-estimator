@@ -1,0 +1,49 @@
+# ==========================================================================
+# WCE Estimator - .gitignore
+# Protects confidential project data and secrets from being published.
+# ==========================================================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ---- Secrets / credentials (defense in depth; none are committed today) ----
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+credentials*
+secrets*
+*.secret
+
+# ---- Generated outputs & local scratch (may embed confidential project data) ----
+temp/
+reports/
+out/
+output/
+*.zip
+
+# ---- Data workbooks: ignore ALL by default, whitelist only synthetic samples ----
+# Any real project workbook you drop anywhere (e.g. input/) is ignored
+# automatically. Only the generated, non-confidential templates are tracked.
+*.xlsx
+!templates/WCE_blank_template.xlsx
+!templates/WCE_sample_example.xlsx
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
